@@ -8,7 +8,7 @@
 pkgname=dmenu-git
 _pkgname=dmenu
 pkgver=4.8
-pkgrel=1
+pkgrel=2
 pkgdesc="A generic menu for X"
 url="http://tools.suckless.org/dmenu/"
 arch=('i686' 'x86_64')
@@ -28,6 +28,7 @@ prepare() {
 
 build(){
   cd $_pkgname
+  patch -p1 < ${startdir}/patches/00-dmenu-fuzzymatch-4.8.diff
   make X11INC='/usr/include/X11' X11LIB='/usr/lib/X11'
 }
 
