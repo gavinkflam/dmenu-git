@@ -1,0 +1,15 @@
+diff --git a/dmenu.c b/dmenu.c
+index b64ef8f..27d60bb 100644
+--- a/dmenu.c
++++ b/dmenu.c
+@@ -245,8 +245,8 @@ fuzzymatch(void)
+ 			sidx = eidx = -1; /* start of match, end of match */
+ 			/* walk through item text */
+ 			for (i = 0; i < itext_len && (c = it->text[i]); i++) {
+-				/* fuzzy match pattern */
+-				if (!fstrncmp(&text[pidx], &c, 1)) {
++				/* case-insensitive fuzzy match pattern */
++				if (tolower(text[pidx]) == c || toupper(text[pidx]) == c) {
+ 					if(sidx == -1)
+ 						sidx = i;
+ 					pidx++;
