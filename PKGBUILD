@@ -8,7 +8,7 @@
 pkgname=dmenu-git
 _pkgname=dmenu
 pkgver=4.8
-pkgrel=3
+pkgrel=4
 pkgdesc="A generic menu for X"
 url="http://tools.suckless.org/dmenu/"
 arch=('i686' 'x86_64')
